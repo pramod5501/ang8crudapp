@@ -1,0 +1,33 @@
+<!-- Created By : Pramod Kumar   -->
+
+
+<!--/.Navbar-->
+
+ <div class="topnav">
+  <a class="active" [ngClass]="{'w3-teal': (active === '/')}" routerLink="/">Home</a>
+  <a [ngClass]="{'w3-teal': (active === '/library')}" routerLink="/library">Library</a>
+  <a [ngClass]="{'w3-teal': (active === '/users')}" routerLink="/users">Users</a>
+  <a href="#contact">Groups</a>
+  <a href="#contact">Analytics</a>
+  <a class="w3-bar-item w3-button" (click)="logOut()"><i class="w3-medium fa fa-sign-out"></i>  Logout</a>
+  
+</div> 
+
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:250px;padding-top: 20px;" id="mySidebar">
+	<!-- Logo -->
+	
+	<!-- Sidebar Links -->
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/users')}" routerLink="/users"> <i class="w3-medium fa fa-user"></i>  User List</a>
+	<a class="w3-bar-item w3-button" routerLink="/users/add"  [ngClass]="{'w3-teal': (active === '/users/add')}"> <i class="w3-medium fa fa-plus"></i>  Add new user</a>
+	
+</nav>
+
+<!-- Load main contents -->
+<div class="w3-main" style="margin-left:250px;">
+	<div class="w3-container">
+	<!-- Initiate Child Routing -->
+		<router-outlet></router-outlet>
+	</div>
+</div>
+
+<!-- Created By : Pramod Kumar   -->
