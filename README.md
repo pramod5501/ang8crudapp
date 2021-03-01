@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  * User Deletion
 
 
-## Angular 7 features used
+## Angular  features used
 
  * Modules
  * Routes
