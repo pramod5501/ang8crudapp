@@ -24,6 +24,12 @@ import { StudentListComponent } from './components/student/list/student-list.com
 import { StudentDetailsComponent } from './components/student/details/student-details.component';
 import { StudentAddComponent } from './components/student/add/student-add.component';
 import { StudentEditComponent } from './components/student/edit/student-edit.component';
+
+import { LibraryListComponent } from './components/library/list/library-list.component';
+import { LibraryDetailsComponent } from './components/library/details/library-details.component';
+import { LibraryAddComponent } from './components/library/add/library-add.component';
+//import { LibraryEditComponent } from './components/library/edit/library-edit.component';
+
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent, homeChildRoutes } from './components/home/home.component';
 import { HighlightStudentDirective } from './directives/highlight-student.directive';
@@ -31,6 +37,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { GroupsListComponent } from './components/groups/groups-list/groups-list.component';
 import { GroupsAddComponent } from './components/groups/groups-add/groups-add.component';
 import { DetailComponent } from './components/groups/detail/detail.component';
+
+import { LayoutComponent } from './components/layout/layout.component';
+
 
 
 
@@ -50,7 +59,12 @@ import { DetailComponent } from './components/groups/detail/detail.component';
 		HighlightStudentDirective,
 		GroupsListComponent,
 		GroupsAddComponent,
-		DetailComponent,
+		DetailComponent,		
+		LayoutComponent,
+		LibraryListComponent,
+		LibraryDetailsComponent,
+		LibraryAddComponent
+				
 		
 	],
 	imports: [

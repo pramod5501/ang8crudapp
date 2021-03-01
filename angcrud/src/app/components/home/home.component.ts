@@ -12,6 +12,12 @@
  import { StudentAddComponent } from '../student/add/student-add.component';
   import{ StudentEditComponent } from '../student/edit/student-edit.component';
 
+   // Library Components
+ import { LibraryListComponent } from '../library/list/library-list.component';
+ import { LibraryDetailsComponent } from '../library/details/library-details.component';
+ import { LibraryAddComponent } from '../library/add/library-add.component';
+  //import{ StudentEditComponent } from '../library/edit/library-edit.component';
+
  // Services
  import { routerTransition } from '../../services/config/config.service';
 
@@ -67,7 +73,24 @@
  {
  	path: 'users/detail/:id',
  	component: StudentDetailsComponent
- }
+ },
+ // library
+ {
+	path: 'library',
+	component: LibraryListComponent
+},
+{
+	path: 'library/add',
+	component: LibraryAddComponent
+},
+{
+	path: 'library/update/:id',
+	component: LibraryAddComponent
+},
+{
+	path: 'library/detail/:id',
+	component: LibraryDetailsComponent
+}
  ];
 
 /**

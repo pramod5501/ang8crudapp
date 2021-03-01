@@ -1,0 +1,38 @@
+<!-- Created By : Pramod Kumar   -->
+
+<div class="w3-container" *ngIf="libraryListData">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>Library List <button routerLink="/library/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New Library</button></h3>
+	</div>
+	<span><i class="w3-medium fa fa-search"></i> Search : <input class="" type="text" [(ngModel)]='filterData'></span>
+
+	<div class="w3-panel w3-green" *ngIf="(libraryListData | filter:filterData).length === 0">
+		<h3>Oh no</h3>
+		<p>No librarys found <span *ngIf="filterData"> with search "{{filterData}}"</span> </p>
+	</div>
+	<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(libraryListData | filter:filterData | filter:filterData).length != 0">
+		<table class="w3-table w3-striped w3-bordered">
+			<tr>
+				<th><i class="w3-medium custom-icon fa fa-refresh"></i> Sr. No.</th>
+				<!-- <th>ID</th> -->
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Book Name</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Author Name</th>
+				<th><i class="w3-medium custom-icon fa fa-envelope-o"></i>Auhtor Email</th>
+				<th><i class="w3-medium custom-icon fa fa-leanpub"></i> Publish On</th>
+				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Update</th>
+				<th><i class="w3-medium custom-icon fa fa-trash"></i> Delete</th>
+			</tr>
+			<tr *ngFor="let library of libraryListData | filter:filterData; index as i;" appHighlightlibrary>
+				<td>{{i +1}}</td>
+				<td  >{{library.bookName}} </td>
+				<td  >{{library.authorName}}</td>
+				<td  >{{library.authorEmail}}</td>
+				<td  >{{library.publishOn}}</td>
+				<td><button [routerLink]="['/library/update', library._id]" class="w3-button w3-blue">Update</button></td>
+				<td><button (click)="deleteLibrary(library,i);" class="w3-button w3-red">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Created By : Pramod Kumar   -->
